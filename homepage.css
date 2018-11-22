@@ -1,0 +1,339 @@
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.message {
+  background: #f2f2f2;
+  font-color:black;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: top 500ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  
+}
+
+.message .menuitem {
+  text-decoration: none;
+  background: none;
+  color: black;
+  margin-left: 20px;
+  font-size: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: bold ;
+}
+
+
+#toggle {
+  position:absolute;
+  appearance:none;
+  cursor:pointer;
+  left:-100%;
+  top:-60%;
+  text-align: center;
+}
+
+#toggle + label {
+  position:absolute;
+  cursor:pointer;
+  padding:10px;
+  background: none;
+  width: 100px;
+  border-radius: 3px;
+  padding: 8px 10px;
+  color: black;
+  line-height:20px;
+  font-size:20px;
+  text-align:left;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  margin:0px 30px;
+  transition:all 500ms ease;
+}
+#toggle + label:after {
+  content: url(thumbby.gif) 
+}
+
+.container_1 {
+  transition: margin 700ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  padding:5em 4em;
+  text-align: left;
+  font-family: 'Inconsolata', monospace;
+}
+
+.boxed {
+  border: none;
+  background: white;
+  width: 800px;
+  float: left;
+  padding: 30px;
+  margin-left: 80pt;
+}
+
+.boxed h1 {
+  color: #FE9ED4;
+  font-family: 'Inconsolata', monospace;
+  font-size: 40px;
+  font-weight: bold;
+  font color: black;
+}
+
+
+.boxed p {
+  font-color: black;
+  text-align: left;
+  font-family: 'Inconsolata', monospace;
+}
+
+.boxed_aboutme {
+  border: none;
+  background: white;
+  width: 80%;
+  float: left;
+}
+
+.boxed_aboutme p {
+  font-color: black;
+  text-align: left;
+  font-family: 'Inconsolata', monospace;
+  margin-left: 40px;
+}
+
+a.social-link {
+  font-family: 'Inconsolata', monospace;
+}
+
+a.social-link:link
+{
+   color: black;
+   text-decoration: none;
+}
+a.social-link:visited
+{
+   color: gray;
+   text-decoration: none;
+}
+a.social-link:hover
+{
+   color: #FE9ED4;
+   text-decoration: none;
+}
+a.social-link:active
+{
+   color: #FE9ED4;
+   text-decoration: none;
+}
+
+.boxed ul, li {
+  padding-left: 10px;
+  text-align: left;
+  font-family: 'Inconsolata', monospace;
+}
+
+.pic_of_my_face {
+  margin-left: 600px;
+}
+
+
+#toggle:checked ~ .message {
+  top: 0;
+}
+
+#toggle:checked ~ .container_1 {
+  margin-top: 60px;
+}
+
+#toggle:checked + label {
+  background: white;
+}
+
+#toggle:checked + label:after {
+  content: url(thumbby_down.gif);
+}
+
+
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  box-sizing: border-box;
+}
+
+.main-title{
+  color: #2d2d2d;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.7em 0;
+}
+
+.container {
+  margin-left: 30px;
+  padding: 1em 0;
+  float: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 640px){
+  .container{
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .container{
+    width: 33.33333%;
+  }
+}
+
+.container .title{
+  color: black;
+  text-align: center;
+  padding-bottom: 80px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: white;
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  width: 100%;
+  height: 100%;
+  position: center;
+  height: 300 px;
+  width: 200 px;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3{
+  color: black;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5em;
+  font-family: 'Inconsolata', monospace;
+}
+
+.content-details p{
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.fadeIn-bottom{
+  top: 80%;
+}
+
+.fadeIn-top{
+  top: 20%;
+}
+
+.fadeIn-left{
+  left: 20%;
+}
+
+.fadeIn-right{
+  left: 80%;
+}
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+
+hr { 
+  width:80%; 
+  margin-left: 40px;
+  height:10px; 
+  background-color: black;
+  border:none;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container_for_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(100vw/4), 1fr));
+  grid-template-rows: auto;
+  grid-gap: 40px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.box {
+  background: white;
+  height: 100%;
+}
+
+p.copyright {
+  color: black;
+  text-align: center;
+  padding-bottom: 80px;
+  font-family: 'Inconsolata', monospace;
+
+}
+
